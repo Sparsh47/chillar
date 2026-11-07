@@ -1,17 +1,17 @@
-import { Text, View, StyleSheet } from "react-native";
+import { useOnboardingStatus } from "@/hooks/useOnboardingStatus";
+import { Redirect } from "expo-router";
+import { ActivityIndicator, View } from "react-native";
 
 export default function Index() {
-  return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
-    </View>
-  );
-}
+  const { isComplete } = useOnboardingStatus();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+  if (isComplete === null) {
+    return (
+      <View className="flex-1 bg-black items-center justify-center">
+        <ActivityIndicator color="white" />
+      </View>
+    );
+  }
+
+  return <Redirect href={isComplete ? ("/(tabs)" as never) : "/(onboarding)"} />;
+}

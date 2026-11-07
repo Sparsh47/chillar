@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+    content: ["./src/app/**/*.{js,jsx,ts,tsx}", "./src/components/**/*.{js,jsx,ts,tsx}"],
     presets: [require("nativewind/preset")],
     theme: {
         extend: {
@@ -9,6 +9,7 @@ module.exports = {
                 surface: "#121216",
                 elevated: "#1C1C22",
                 border: "#24242C",
+                background: "#0D0E13"
             },
         },
     },
