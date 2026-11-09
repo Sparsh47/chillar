@@ -38,7 +38,7 @@ export default function OnboardingScreen() {
   }, [markComplete]);
 
   return (
-    <View className="flex-1 bg-[#0A0A0C] relative">
+    <View className="flex-1 bg-[#FAFAF9] relative">
       {/* ── Top progress bars (kept exactly as your OnboardingDots) ───── */}
       <View
         style={{ top: insets.top + 8 }}

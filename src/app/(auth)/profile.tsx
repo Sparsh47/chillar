@@ -53,7 +53,7 @@ export default function ProfileScreen() {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      className="flex-1 bg-[#0A0A0C]"
+      className="flex-1 bg-[#FAFAF9]"
     >
       <ScrollView
         contentContainerStyle={{
@@ -85,7 +85,7 @@ export default function ProfileScreen() {
               <Ionicons
                 name="person-outline"
                 size={18}
-                color="rgba(255, 255, 255, 0.4)"
+                color="rgba(24, 24, 27, 0.45)"
               />
             }
           />
@@ -100,7 +100,7 @@ export default function ProfileScreen() {
               <Ionicons
                 name="mail-outline"
                 size={18}
-                color="rgba(255, 255, 255, 0.4)"
+                color="rgba(24, 24, 27, 0.45)"
               />
             }
           />
@@ -114,7 +114,7 @@ export default function ProfileScreen() {
               <Ionicons
                 name="call-outline"
                 size={18}
-                color="rgba(255, 255, 255, 0.4)"
+                color="rgba(24, 24, 27, 0.45)"
               />
             }
           />
@@ -132,11 +132,11 @@ export default function ProfileScreen() {
               <Ionicons
                 name="wallet-outline"
                 size={18}
-                color="rgba(255, 255, 255, 0.4)"
+                color="rgba(24, 24, 27, 0.45)"
               />
             }
           />
-          <Text className="text-white/40 text-xs mt-1">
+          <Text className="text-zinc-500 text-xs mt-1">
             Friends will settle group balances directly to this UPI ID.
           </Text>
         </ProfileSection>
@@ -145,44 +145,44 @@ export default function ProfileScreen() {
         <ProfileSection title="Offline-First Sync">
           <View className="flex-row items-center justify-between">
             <View className="flex-row items-center gap-3">
-              <View className="w-9 h-9 rounded-full bg-emerald-500/10 items-center justify-center">
-                <Ionicons name="cloud-done-outline" size={20} color="#34d399" />
+              <View className="w-9 h-9 rounded-full bg-emerald-50 items-center justify-center">
+                <Ionicons name="cloud-done-outline" size={20} color="#059669" />
               </View>
               <View>
-                <Text className="text-white font-semibold text-sm">
+                <Text className="text-[#18181B] font-semibold text-sm">
                   Workspaces Synced
                 </Text>
-                <Text className="text-white/50 text-xs">
+                <Text className="text-zinc-500 text-xs">
                   SQLite database active & offline-ready
                 </Text>
               </View>
             </View>
-            <View className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+            <View className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
           </View>
         </ProfileSection>
 
         {/* Action Buttons */}
-        <View className="gap-3 mt-2">
+        <View className="gap-3 mt-4 mb-6">
           <Button
             title="Save Changes"
             onPress={handleSave}
             loading={saving}
-            rightIcon={<Ionicons name="checkmark" size={18} color="#000" />}
+            rightIcon={<Ionicons name="checkmark" size={18} color="#fff" />}
             className="w-full"
           />
 
           <Button
-            title="Sign Out"
-            variant="ghost"
+            title="Log Out"
+            variant="outline"
             onPress={handleLogout}
             leftIcon={
-              <Ionicons name="log-out-outline" size={18} color="rgba(255,255,255,0.6)" />
+              <Ionicons name="log-out-outline" size={18} color="#BE123C" />
             }
-            className="w-full"
+            className="w-full border-rose-200 bg-rose-50/60 active:bg-rose-100"
+            textClassName="text-[#BE123C] font-semibold"
           />
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
   );
 }
-

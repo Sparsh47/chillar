@@ -9,13 +9,12 @@ type Props = {
 export function ProfileSection({ title, children, className = "" }: Props) {
   return (
     <View className={`w-full mb-6 ${className}`}>
-      <Text className="text-white/40 text-xs font-semibold tracking-wider uppercase mb-3 px-1">
+      <Text className="text-zinc-400 text-xs font-semibold tracking-wider uppercase mb-2.5 px-1">
         {title}
       </Text>
-      <View className="bg-[#121216] border border-[#24242C] rounded-2xl p-4 gap-4">
+      <View className="bg-white border border-[#EAEAE8] rounded-3xl p-4 gap-4 shadow-xs">
         {children}
       </View>
     </View>
   );
 }
-

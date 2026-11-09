@@ -26,17 +26,17 @@ export function Input({
   return (
     <View className={`w-full ${containerClassName}`}>
       {label && (
-        <Text className="text-white/50 text-xs font-semibold tracking-wider mb-2 uppercase">
+        <Text className="text-zinc-500 text-xs font-semibold tracking-wider mb-2 uppercase">
           {label}
         </Text>
       )}
 
-      <View className="flex-row items-center bg-[#121216] border border-[#24242C] focus:border-white/30 rounded-xl px-4 py-3.5">
+      <View className="flex-row items-center bg-white border border-[#E4E4E7] focus:border-[#D9383A] rounded-2xl px-4 py-3.5 shadow-sm">
         {leftIcon && <View className="mr-3">{leftIcon}</View>}
 
         <TextInput
-          placeholderTextColor="rgba(255, 255, 255, 0.3)"
-          className={`flex-1 text-white text-base font-normal ${className}`}
+          placeholderTextColor="rgba(24, 24, 27, 0.35)"
+          className={`flex-1 text-[#18181B] text-base font-normal ${className}`}
           {...inputProps}
         />
 
@@ -44,9 +44,8 @@ export function Input({
       </View>
 
       {error && (
-        <Text className="text-red-400 text-xs mt-1.5 ml-1">{error}</Text>
+        <Text className="text-rose-600 text-xs mt-1.5 ml-1 font-medium">{error}</Text>
       )}
     </View>
   );
 }
-

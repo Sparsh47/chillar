@@ -12,12 +12,11 @@ export function OnboardingDots({ total, activeIndex }: Props) {
         <View
           key={i}
           className={[
-            "h-1 rounded transition-all flex-1",
-            i === activeIndex ? "bg-white" : "bg-white/30",
+            "h-1 rounded-full transition-all flex-1",
+            i === activeIndex ? "bg-[#D9383A]" : "bg-stone-200",
           ].join(" ")}
         />
       ))}
     </View>
   );
 }
-

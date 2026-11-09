@@ -5,11 +5,23 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                canvas: "#0A0A0C",
-                surface: "#121216",
-                elevated: "#1C1C22",
-                border: "#24242C",
-                background: "#0D0E13"
+                canvas: "#FAFAF9",
+                surface: "#FFFFFF",
+                elevated: "#F4F4F5",
+                border: "#E4E4E7",
+                background: "#FAFAF9",
+                accent: {
+                    DEFAULT: "#D9383A",
+                    subtle: "#FFF1F2",
+                    border: "#FECDD3",
+                    text: "#BE123C",
+                    hover: "#C53030",
+                },
+                ink: {
+                    DEFAULT: "#18181B",
+                    muted: "#71717A",
+                    subtle: "#A1A1AA",
+                },
             },
         },
     },

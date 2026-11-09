@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
   KeyboardAvoidingView,
   Platform,
-  Pressable,
   ScrollView,
   Text,
   View,
@@ -49,7 +48,7 @@ export default function AuthScreen() {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      className="flex-1 bg-[#0A0A0C]"
+      className="flex-1 bg-[#FAFAF9]"
     >
       <ScrollView
         contentContainerStyle={{
@@ -86,14 +85,14 @@ export default function AuthScreen() {
                 <Ionicons
                   name="mail-outline"
                   size={18}
-                  color="rgba(255, 255, 255, 0.4)"
+                  color="rgba(24, 24, 27, 0.45)"
                 />
               }
             />
 
             <Button
               title="Continue"
-              rightIcon={<Ionicons name="arrow-forward" size={18} color="#000" />}
+              rightIcon={<Ionicons name="arrow-forward" size={18} color="#fff" />}
               onPress={handleContinue}
               loading={loading}
               className="w-full mt-4"
@@ -107,14 +106,13 @@ export default function AuthScreen() {
 
         {/* Footer Terms */}
         <View className="items-center px-4 pt-8">
-          <Text className="text-white/40 text-xs text-center leading-relaxed">
+          <Text className="text-zinc-400 text-xs text-center leading-relaxed">
             By continuing, you agree to Chillar's{" "}
-            <Text className="text-white/70 underline">Terms</Text> &{" "}
-            <Text className="text-white/70 underline">Privacy Policy</Text>.
+            <Text className="text-zinc-700 underline font-medium">Terms</Text> &{" "}
+            <Text className="text-zinc-700 underline font-medium">Privacy Policy</Text>.
           </Text>
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
   );
 }
-

@@ -7,14 +7,20 @@ type Props = {
   className?: string;
 };
 
-export function AppLogo({ width = 130, height = 42, style, className }: Props) {
+export function AppLogo({
+  width = 130,
+  height = 42,
+  style,
+  className,
+}: Props) {
+  const source = require("../../../assets/images/logo.png")
+
   return (
     <Image
-      source={require("../../../assets/images/logo.png")}
+      source={source}
       style={[{ width, height }, style]}
       className={className}
       resizeMode="contain"
     />
   );
 }
-

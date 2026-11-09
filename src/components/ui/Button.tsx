@@ -6,7 +6,7 @@ import {
   type PressableProps,
 } from "react-native";
 
-export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
+export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "accent";
 export type ButtonSize = "sm" | "md" | "lg";
 
 type Props = PressableProps & {
@@ -35,26 +35,30 @@ export function Button({
   const getVariantStyles = () => {
     switch (variant) {
       case "primary":
-        return "bg-white active:opacity-80";
+        return "bg-[#18181B] active:bg-[#27272A] shadow-sm";
       case "secondary":
-        return "bg-[#1C1C22] active:bg-[#24242C] border border-[#24242C]";
+        return "bg-[#F4F4F5] active:bg-[#EBEBEA] border border-[#E4E4E7]";
       case "outline":
-        return "bg-transparent border border-[#24242C] active:border-white/40";
+        return "bg-white border border-[#E4E4E7] active:bg-stone-50 shadow-sm";
       case "ghost":
-        return "bg-transparent active:opacity-60";
+        return "bg-transparent active:bg-stone-100";
+      case "accent":
+        return "bg-[#FFF1F2] border border-[#FECDD3] active:bg-[#FFE4E6]";
     }
   };
 
   const getTextStyles = () => {
     switch (variant) {
       case "primary":
-        return "text-black font-bold";
-      case "secondary":
         return "text-white font-semibold";
+      case "secondary":
+        return "text-[#18181B] font-semibold";
       case "outline":
-        return "text-white font-medium";
+        return "text-[#18181B] font-medium";
       case "ghost":
-        return "text-white/70 font-medium";
+        return "text-zinc-600 font-medium";
+      case "accent":
+        return "text-[#BE123C] font-semibold";
     }
   };
 
@@ -65,7 +69,7 @@ export function Button({
       case "md":
         return "py-3 px-5 rounded-full";
       case "lg":
-        return "py-4 px-6 rounded-full";
+        return "py-3.5 px-6 rounded-full";
     }
   };
 
@@ -91,7 +95,7 @@ export function Button({
       {loading ? (
         <ActivityIndicator
           size="small"
-          color={variant === "primary" ? "#000" : "#fff"}
+          color={variant === "primary" ? "#fff" : "#18181B"}
         />
       ) : (
         <>
@@ -107,4 +111,3 @@ export function Button({
     </Pressable>
   );
 }
-

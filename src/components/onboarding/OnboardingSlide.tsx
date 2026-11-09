@@ -24,36 +24,37 @@ export function OnboardingSlide({ slide, onNext, onFinish, isLast }: Props) {
   const insets = useSafeAreaInsets();
 
   return (
-    <View className="bg-background" style={{ width, height }}>
+    <View style={{ width, height, backgroundColor: "#FAFAF9" }}>
       {/* ── Status pill ─────────────────────────────────────────────────── */}
       <View
         style={{ paddingTop: insets.top + 26 }}
         className="items-center px-6"
       >
-        <View className="flex-row items-center gap-2 border border-white/10 rounded-full px-3 py-1.5 bg-white/[0.02]">
-          <View className="w-2 h-2 rounded-full bg-emerald-400" />
-          <Text className="text-white/55 text-xs tracking-wide">
+        <View className="flex-row items-center gap-2 border border-rose-200/80 rounded-full px-3 py-1.5 bg-rose-50/80">
+          <View className="w-2 h-2 rounded-full bg-[#D9383A]" />
+          <Text className="text-[#BE123C] text-xs font-semibold tracking-wide">
             {slide.tag ?? "Offline-first • Workspaces synced"}
           </Text>
         </View>
       </View>
 
-      {/* ── App Logo Image (instead of text) ────────────────────────────── */}
+      {/* ── App Logo Image ──────────────────────────────────────────────── */}
       <View className="items-center mt-3">
         <AppLogo width={130} height={38} />
       </View>
 
-      {/* ── Image illustration ───────────────────────────────────────────── */}
+      {/* ── Image illustration showcase card ─────────────────────────────── */}
       <View className="flex-1 items-center justify-center px-6 py-2">
-        <Image
-          source={slide.image}
-          style={{
-            width: Math.min(width * 0.85, 340),
-            height: "100%",
-            maxHeight: 290,
-          }}
-          resizeMode="contain"
-        />
+        <View className="w-[88%] max-w-[340px] h-[270px] rounded-3xl bg-[#121216] overflow-hidden shadow-md items-center justify-center p-3 border border-stone-200">
+          <Image
+            source={slide.image}
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+            resizeMode="contain"
+          />
+        </View>
       </View>
 
       {/* ── Bottom content ───────────────────────────────────────────────── */}
@@ -62,19 +63,19 @@ export function OnboardingSlide({ slide, onNext, onFinish, isLast }: Props) {
         style={{ paddingBottom: insets.bottom + 20 }}
       >
         <Text
-          className="text-white font-extrabold leading-tight mb-3"
+          className="text-[#18181B] font-extrabold leading-tight mb-3"
           style={{ fontSize: 34 }}
         >
           {slide.title}
         </Text>
-        <Text className="text-white/55 text-[15px] leading-relaxed mb-6">
+        <Text className="text-zinc-600 text-[15px] leading-relaxed mb-6">
           {slide.subtitle}
         </Text>
 
         {/* Primary CTA with vector icon */}
         <Button
           title={isLast ? "Get Started" : slide.buttonText.replace(" →", "")}
-          rightIcon={<Ionicons name="arrow-forward" size={18} color="#000" />}
+          rightIcon={<Ionicons name="arrow-forward" size={18} color="#fff" />}
           onPress={isLast ? onFinish : onNext}
           className="w-full mb-3"
         />
@@ -84,9 +85,9 @@ export function OnboardingSlide({ slide, onNext, onFinish, isLast }: Props) {
           onPress={onFinish}
           className="items-center py-2 active:opacity-60"
         >
-          <Text className="text-white/45 text-sm">
+          <Text className="text-zinc-500 text-sm">
             Already have an account?{" "}
-            <Text className="text-white/75 font-semibold">Sign In</Text>
+            <Text className="text-[#18181B] font-semibold underline">Sign In</Text>
           </Text>
         </Pressable>
       </View>

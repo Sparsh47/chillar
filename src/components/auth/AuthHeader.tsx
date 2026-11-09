@@ -18,15 +18,14 @@ export function AuthHeader({
       </View>
 
       {/* Headline */}
-      <Text className="text-white text-3xl font-extrabold tracking-tight mb-2">
+      <Text className="text-[#18181B] text-3xl font-extrabold tracking-tight mb-2">
         {title}
       </Text>
 
       {/* Subtitle */}
-      <Text className="text-white/60 text-base leading-relaxed">
+      <Text className="text-zinc-500 text-base leading-relaxed">
         {subtitle}
       </Text>
     </View>
   );
 }
-
